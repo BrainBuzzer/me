@@ -1,0 +1,79 @@
+{% load static %}
+{% load render_bundle from webpack_loader %}
+{% load analytics_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.min.css">
+  <link rel="stylesheet" href="{% static 'themes/2656026e-d569-4134-ba1b-1563d9733c17/style.css' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  <title>{{ profile.first_name }} {{ profile.last_name }}</title>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <div class="avatar">
+          {% if profile.image %}
+          <img src="{{ profile.image.url }}" alt="Avatar">
+          {% else %}
+          <img src="https://freeiconshop.com/wp-content/uploads/edd/person-flat.png" alt="Avatar">
+          {% endif %}
+        </div>
+        <div class="name">{{ profile.first_name }} {{ profile.last_name }}</div>
+        <div class="short-description">
+          {{ profile.short_description }}
+        </div>
+      </section>
+      <section>
+        <div class="description" id="style-scroll">
+          {{ profile.description }}
+        </div>
+        <div class="social">
+          <a href="#" class="website"><i class="fas fa-link"></i></a>
+          {% if profile.medium %}
+          <a href="{{ profile.medium }}" class="medium"><i class="fab fa-medium"></i></a>
+          {% endif %}
+          {% if profile.github %}
+          <a href="{{ profile.github }}" class="github"><i class="fab fa-github"></i></a>
+          {%endif%}
+          {% if profile.twitter %}
+          <a href="{{ profile.twitter }}" class="twitter"><i class="fab fa-twitter"></i></a>
+          {%endif%}
+          {% if profile.facebook %}
+          <a href="{{ profile.facebook }}" class="facebook"><i class="fab fa-facebook"></i></a>
+          {%endif%}
+          {% if profile.linkedin %}
+          <a href="{{ profile.linkedin }}" class="linkedin"><i class="fab fa-linkedin"></i></a>
+          {%endif%}
+        </div>
+      </section>
+      {% if profile.medium %}
+      <section>
+        <div id="react-medium"></div>
+      </section>
+      {% endif %}
+      {% if profile.unsplash %}
+      <section>
+        <div id="react-unsplash"></div>
+      </section>
+      {% endif %}
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js"></script>
+  <script>
+    window.prefix = '{{profile.prefix}}'
+    Reveal.initialize();
+  </script>
+  {% if profile.medium %}
+  {% render_bundle "medium"%}
+  {% endif %}
+  {% if profile.unsplash %}
+  {% render_bundle "unsplash"%}
+  {% endif %}
+</body>
+</html>

@@ -15,5 +15,9 @@ THEME_LIST = [
     {
         'name': 'card',
         'uuid': 'bc5ac915-97a8-40d7-8598-62d0e2554de0'
+    },
+    {
+        'name': 'revealjs',
+        'uuid': '2656026e-d569-4134-ba1b-1563d9733c17'
     }
 ]

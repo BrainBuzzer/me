@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+body {
+  margin: 0;
+  font-family: "Poppins", sans-Serif;
+}
+
+.avatar img {
+  max-width: 128px;
+  border-radius: 100%;
+}
+.name {
+  font-size: 32px;
+  font-weight: 800;
+}
+.short-description {
+  color: #666;
+}
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.social a {
+  margin-top: 20px;
+  margin-right: 20px;
+  text-decoration: none;
+  font-size: 2rem;
+  color: #888888;
+}
+.social a.website:hover {
+  color: #000;
+}
+.social a.github:hover {
+  color: #171515;
+}
+.social a.medium:hover {
+  color:#12100E;
+}
+.social a.facebook:hover {
+  color: #4867AA;
+}
+.social a.twitter:hover {
+  color: #1DA1F2;
+}
+.social a.linkedin:hover {
+  color: #0077B5;
+}
+.description {
+  font-size: 14px;
+  /* max-width: 480px; */
+  max-height: 480px;
+  overflow-y: scroll;
+}
+#style-scroll::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-scroll::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+}
+
+#style-scroll::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: rgba(75, 207, 250, 0.4);
+}
+.medium-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+  font-size: 22px !important;
+}
+.card {
+  background: #fff;
+  padding: 10px !important;
+  border: 4px solid #222 !important;
+  border-radius: 25px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  transition: box-shadow .3s;
+}
+.image-card {
+  background: #fff;
+  border-radius: 25px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  transition: box-shadow .3s;
+}
+.card:hover, .image-card:hover {
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.2);
+}
+.medium-anchor {
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #02B875 !important;
+  font-weight: 700;
+}
+.medium-anchor:hover {
+  text-decoration: none;
+  color: #1BB495;
+}
+.link-feed {
+  color: #333;
+}
